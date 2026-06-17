@@ -3,7 +3,7 @@
 
 ---
 
-## 📂 Repository 1: Process Environment Block (PEB) Extractor
+## 📂 Process Environment Block (PEB) Extractor
 
 ### 📝 Description
 When an executable launches, the Windows Kernel (`ntoskrnl.exe`) creates a massive, protected data structure in Kernel Space (Ring 0) called the `EPROCESS` block. Because user-mode (Ring 3) applications cannot access this without crashing, the Kernel maps a smaller, secondary structure directly into the application's memory. This is the **Process Environment Block (PEB)**. This program completely bypasses standard Win32 API calls, using raw compiler intrinsics and pointer arithmetic to locate and read the PEB directly from CPU registers.
